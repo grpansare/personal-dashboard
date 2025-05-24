@@ -48,10 +48,9 @@ export default function ProjectsAndEducation() {
       id: 3,
       title: "Smart car parking system",
       description:
-        "Smart Car Parking System is an intelligent web-based solution that helps users find and book parking spots in real-time using an interactive map. It features secure user authentication, slot management, dynamic pricing, and seamless online payments. ",
-      technologies: ["Reactjs", "OpenStreetMap API", "Spring boot", "MySQL","Razorpay"],
+        "Smart Car Parking System is an intelligent web-based solution that helps users find and book parking spots in real-time using an interactive map. It features secure user authentication, slot management, dynamic pricing, and seamless online payments.",
+      technologies: ["Reactjs", "OpenStreetMap API", "Spring boot", "MySQL", "Razorpay"],
       githubUrl: "https://github.com/grpansare/smart-parking-frontend",
-    //   liveUrl: "https://weather-forecast-demo.netlify.app",
       image:
         "https://b2bblogassets.airtel.in/wp-content/uploads/2022/05/iot-based-smart-parking-scaled.jpg",
       featured: false,
@@ -70,7 +69,6 @@ export default function ProjectsAndEducation() {
       grade: "Current CGPA: 9.23/10",
       description:
         "Specializing in Software Development and Web Technologies. Coursework includes Advanced Programming, Database Management, Software Engineering, and Machine Learning.",
-     
       logo: "🎓",
     },
     {
@@ -83,14 +81,8 @@ export default function ProjectsAndEducation() {
       grade: "Percentage: 79.5%",
       description:
         "Comprehensive program covering programming fundamentals, web development, database systems, and software engineering principles.",
-      highlights: [
-        "First Class with Distinction",
-       
-        "Active member of Programming Club",
-      ],
       logo: "🎯",
     },
-   
   ];
 
   const certifications = [
@@ -118,58 +110,62 @@ export default function ProjectsAndEducation() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 md:py-12">
       {/* Section Navigation */}
-      <div className="flex justify-center mb-12">
-        <div className="bg-white rounded-xl p-2 shadow-lg border border-gray-100">
-          <button
-            onClick={() => setActiveTab("projects")}
-            className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
-              activeTab === "projects"
-                ? "bg-blue-600 text-white shadow-lg"
-                : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
-            }`}
-          >
-            <Code className="w-5 h-5 inline mr-2" />
-            Projects
-          </button>
-          <button
-            onClick={() => setActiveTab("education")}
-            className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
-              activeTab === "education"
-                ? "bg-blue-600 text-white shadow-lg"
-                : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
-            }`}
-          >
-            <GraduationCap className="w-5 h-5 inline mr-2" />
-            Education
-          </button>
+      <div className="flex justify-center mb-8 md:mb-12">
+        <div className="bg-white rounded-xl p-1 sm:p-2 shadow-lg border border-gray-100 w-full max-w-md">
+          <div className="grid grid-cols-2 gap-1">
+            <button
+              onClick={() => setActiveTab("projects")}
+              className={`px-3 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ${
+                activeTab === "projects"
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              <Code className="w-4 h-4 sm:w-5 sm:h-5 inline mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Projects</span>
+              <span className="sm:hidden">Projects</span>
+            </button>
+            <button
+              onClick={() => setActiveTab("education")}
+              className={`px-3 sm:px-6 lg:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 ${
+                activeTab === "education"
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+              }`}
+            >
+              <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 inline mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Education</span>
+              <span className="sm:hidden">Education</span>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Projects Section */}
       {activeTab === "projects" && (
-        <div className="space-y-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <div className="space-y-6 md:space-y-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3 md:mb-4 px-2">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               A showcase of my development journey through various web
               applications and software solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {projectsData.map((project) => (
               <div
                 key={project.id}
-                className={`group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 ${
+                className={`group bg-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2 border border-gray-100 ${
                   project.featured ? "ring-2 ring-blue-500 ring-opacity-20" : ""
                 }`}
               >
                 {project.featured && (
-                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-2 text-sm font-medium">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-1.5 sm:py-2 text-xs sm:text-sm font-medium">
                     ⭐ Featured Project
                   </div>
                 )}
@@ -178,11 +174,11 @@ export default function ProjectsAndEducation() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-fill group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-40 sm:h-48 md:h-52 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${
                         project.status === "Completed"
                           ? "bg-green-100 text-green-800"
                           : "bg-yellow-100 text-yellow-800"
@@ -193,43 +189,43 @@ export default function ProjectsAndEducation() {
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-200">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                     {project.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                        className="px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs sm:text-sm font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-200 text-sm font-medium"
+                      className="flex items-center justify-center px-3 sm:px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-200 text-xs sm:text-sm font-medium"
                     >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
+                      <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                      View Code
                     </a>
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
+                        className="flex items-center justify-center px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-xs sm:text-sm font-medium"
                       >
-                        <ExternalLink className="w-4 h-4 mr-2" />
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                         Live Demo
                       </a>
                     )}
@@ -243,42 +239,45 @@ export default function ProjectsAndEducation() {
 
       {/* Education Section */}
       {activeTab === "education" && (
-        <div className="space-y-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <div className="space-y-6 md:space-y-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3 md:mb-4 px-2">
               Education Journey
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               My academic background and continuous learning path in computer
               science and technology
             </p>
           </div>
 
-          {/* Education Timeline */}
+          {/* Education Timeline - Mobile Responsive */}
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+            {/* Timeline line - hidden on mobile, visible on larger screens */}
+            <div className="hidden md:block absolute left-6 lg:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
 
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {educationData.map((edu, index) => (
-                <div key={edu.id} className="relative flex items-start">
-                  <div className="absolute left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div>
+                <div key={edu.id} className="relative">
+                  {/* Timeline dot - hidden on mobile */}
+                  <div className="hidden md:block absolute left-4 lg:left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg top-6"></div>
 
-                  <div className="ml-16 bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center">
-                        <div className="text-3xl mr-4">{edu.logo}</div>
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                  <div className="md:ml-12 lg:ml-16 bg-white rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 w-full">
+                    {/* Header section - responsive layout */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3 sm:gap-4">
+                      <div className="flex items-start">
+                        <div className="text-2xl sm:text-3xl mr-3 sm:mr-4 flex-shrink-0">{edu.logo}</div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-1 leading-tight">
                             {edu.degree}
                           </h3>
-                          <p className="text-lg text-blue-600 font-semibold">
+                          <p className="text-sm sm:text-base md:text-lg text-blue-600 font-semibold">
                             {edu.institution}
                           </p>
                         </div>
                       </div>
-                      <div className="text-right">
+                      <div className="flex-shrink-0">
                         <span
-                          className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
                             edu.status === "Pursuing"
                               ? "bg-blue-100 text-blue-800"
                               : "bg-green-100 text-green-800"
@@ -289,78 +288,61 @@ export default function ProjectsAndEducation() {
                       </div>
                     </div>
 
-                    <div className="flex items-center text-gray-600 mb-4 space-x-6">
+                    {/* Details section - responsive grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 text-gray-600 mb-4 text-sm sm:text-base">
                       <div className="flex items-center">
-                        <Calendar className="w-5 h-5 mr-2" />
-                        <span>{edu.duration}</span>
+                        <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                        <span className="truncate">{edu.duration}</span>
                       </div>
                       <div className="flex items-center">
-                        <MapPin className="w-5 h-5 mr-2" />
-                        <span>{edu.location}</span>
+                        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                        <span className="truncate">{edu.location}</span>
                       </div>
-                      <div className="flex items-center">
-                        <Award className="w-5 h-5 mr-2" />
-                        <span className="font-semibold">{edu.grade}</span>
+                      <div className="flex items-center sm:col-span-2 lg:col-span-1">
+                        <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
+                        <span className="font-semibold truncate">{edu.grade}</span>
                       </div>
                     </div>
 
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {edu.description}
                     </p>
-
-                    {/* <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-800 flex items-center">
-                        <Trophy className="w-5 h-5 mr-2 text-yellow-500" />
-                        Key Highlights
-                      </h4>
-                      <ul className="space-y-2">
-                        {edu.highlights.map((highlight, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center text-gray-600"
-                          >
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </div> */}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Certifications */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          {/* Certifications - Responsive Grid */}
+          <div className="mt-12 md:mt-16">
+            <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6 md:mb-8 px-2">
               Certifications & Achievements
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {certifications.map((cert, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                  className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
                 >
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                      <Award className="w-8 h-8 text-white" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-200">
+                      <Award className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <h4 className="font-bold text-gray-800 mb-2">
+                    <h4 className="font-bold text-gray-800 mb-2 text-sm sm:text-base leading-tight">
                       {cert.title}
                     </h4>
-                    <p className="text-blue-600 font-semibold mb-1">
+                    <p className="text-blue-600 font-semibold mb-1 text-sm sm:text-base">
                       {cert.issuer}
                     </p>
-                    <p className="text-gray-500 text-sm mb-4">{cert.date}</p>
+                    <p className="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4">{cert.date}</p>
                     <a
                       href={cert.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-xs sm:text-sm transition-colors duration-200"
                     >
                       View Certificate
-                      <ExternalLink className="w-4 h-4 ml-1" />
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
                     </a>
                   </div>
                 </div>
