@@ -19,8 +19,7 @@ export default function Home() {
         return <ProjectsAndEducation />
       case 'skills':
         return <SkillsSection />
-      case 'goals':
-        return <GoalsSection />
+   
       default:
         return <ProfileSection />
     }

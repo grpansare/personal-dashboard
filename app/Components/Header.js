@@ -9,7 +9,7 @@ export default function Header({ activeSection, setActiveSection }) {
     { id: 'profile', label: 'Profile' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
-    { id: 'goals', label: 'Goals' }
+   
   ]
 
   return (
